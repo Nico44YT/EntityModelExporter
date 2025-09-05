@@ -4,13 +4,14 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import net.minecraft.client.model.ModelCuboidData;
+import net.minecraft.client.model.ModelTransform;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
 
 import java.util.UUID;
 
-public record BlockbenchCuboid(@Nullable String name, Vector3f from, Vector3f to, Vector3f origin, Vector2f uvOffset) {
+public record BlockbenchCuboid(@Nullable String name, Vector3f from, Vector3f to, Vector3f origin, Vector2f uvOffset, Vector3f pivotPoint) {
     public JsonElement toJson() {
         JsonObject parentObject = new JsonObject();
 
@@ -48,12 +49,13 @@ public record BlockbenchCuboid(@Nullable String name, Vector3f from, Vector3f to
         return array;
     }
 
-    public static BlockbenchCuboid convert(String name, ModelCuboidData cube) {
+    public static BlockbenchCuboid convert(String name, ModelCuboidData cube, ModelTransform rotationData) {
         Vector3f origin = new Vector3f(0, 0, 0);
         Vector3f from = new Vector3f(cube.offset.x, -cube.offset.y, cube.offset.z);
         Vector3f to = new Vector3f(cube.dimensions.x + cube.offset.x, cube.dimensions.y + Math.abs(cube.offset.y), cube.dimensions.z + cube.offset.z);
         Vector2f uvOffset = new Vector2f(cube.textureUV.getX(), cube.textureUV.getY());
+        Vector3f pivotPoint = new Vector3f(rotationData.pivotX, rotationData.pivotY, rotationData.pivotZ);
 
-        return new BlockbenchCuboid(name, from, to, origin, uvOffset);
+        return new BlockbenchCuboid(name, from, to, origin, uvOffset, pivotPoint);
     }
 }

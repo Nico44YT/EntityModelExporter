@@ -8,6 +8,7 @@ accessible field net/minecraft/client/model/TextureDimensions height I
 
 accessible field net/minecraft/client/model/ModelPartData cuboidData Ljava/util/List;
 accessible field net/minecraft/client/model/ModelPartData children Ljava/util/Map;
+accessible field net/minecraft/client/model/ModelPartData rotationData Lnet/minecraft/client/model/ModelTransform;
 
 accessible field net/minecraft/client/model/ModelCuboidData name Ljava/lang/String;
 accessible field net/minecraft/client/model/ModelCuboidData offset Lorg/joml/Vector3f;
