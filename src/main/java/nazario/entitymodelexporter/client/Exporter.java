@@ -5,10 +5,8 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.model.ModelCuboidData;
 import net.minecraft.client.model.ModelPartData;
 import net.minecraft.client.model.TexturedModelData;
-import net.minecraft.util.Identifier;
 import org.joml.Vector3f;
 
 import java.io.BufferedWriter;
@@ -16,9 +14,7 @@ import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Exporter {
     public static void export(String name, TexturedModelData texturedModelData) {

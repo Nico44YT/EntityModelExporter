@@ -8,7 +8,6 @@ import org.jetbrains.annotations.Nullable;
 import org.joml.Vector2f;
 import org.joml.Vector3f;
 
-import java.util.List;
 import java.util.UUID;
 
 public record BlockbenchCuboid(@Nullable String name, Vector3f from, Vector3f to, Vector3f origin, Vector2f uvOffset) {
@@ -50,9 +49,9 @@ public record BlockbenchCuboid(@Nullable String name, Vector3f from, Vector3f to
     }
 
     public static BlockbenchCuboid convert(String name, ModelCuboidData cube) {
-        Vector3f from = new Vector3f(cube.offset).add(16, 16, 0);
-        Vector3f to = new Vector3f(cube.dimensions);
         Vector3f origin = new Vector3f(0, 0, 0);
+        Vector3f from = new Vector3f(cube.offset.x, -cube.offset.y, cube.offset.z);
+        Vector3f to = new Vector3f(cube.dimensions.x + cube.offset.x, cube.dimensions.y + Math.abs(cube.offset.y), cube.dimensions.z + cube.offset.z);
         Vector2f uvOffset = new Vector2f(cube.textureUV.getX(), cube.textureUV.getY());
 
         return new BlockbenchCuboid(name, from, to, origin, uvOffset);
