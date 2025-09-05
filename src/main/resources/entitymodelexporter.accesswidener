@@ -1,0 +1,19 @@
+accessWidener v2 named
+
+accessible field net/minecraft/client/model/TexturedModelData data Lnet/minecraft/client/model/ModelData;
+accessible field net/minecraft/client/model/TexturedModelData dimensions Lnet/minecraft/client/model/TextureDimensions;
+
+accessible field net/minecraft/client/model/TextureDimensions width I
+accessible field net/minecraft/client/model/TextureDimensions height I
+
+accessible field net/minecraft/client/model/ModelPartData cuboidData Ljava/util/List;
+accessible field net/minecraft/client/model/ModelPartData children Ljava/util/Map;
+
+accessible field net/minecraft/client/model/ModelCuboidData name Ljava/lang/String;
+accessible field net/minecraft/client/model/ModelCuboidData offset Lorg/joml/Vector3f;
+accessible field net/minecraft/client/model/ModelCuboidData dimensions Lorg/joml/Vector3f;
+accessible field net/minecraft/client/model/ModelCuboidData extraSize Lnet/minecraft/client/model/Dilation;
+accessible field net/minecraft/client/model/ModelCuboidData mirror Z
+accessible field net/minecraft/client/model/ModelCuboidData textureUV Lnet/minecraft/client/util/math/Vector2f;
+accessible field net/minecraft/client/model/ModelCuboidData textureScale Lnet/minecraft/client/util/math/Vector2f;
+accessible field net/minecraft/client/model/ModelCuboidData directions Ljava/util/Set;
